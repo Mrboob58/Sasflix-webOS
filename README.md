@@ -21,7 +21,6 @@
 ## Совместимость
 
 - Целевая платформа: **LG webOS TV 4.0 и новее**.
-- Основное целевое устройство разработки: **LG 49UK6390PLG**, firmware **05.50.70**.
 - Интерфейс рассчитан на разрешение **1920 × 1080** и масштабируется движком телевизора.
 - Код написан с учётом Chromium 53, используемого в webOS 4: ES5-синтаксис, CSS-fallback для Flexbox и отсутствие обязательных современных UI-фреймворков.
 - Для воспроизведения необходим доступ телевизора к `sasflix.ru`, `media.sasflix.ru` или `mirror.sasflix.ru`; HLS также использует `reflector.sasflix.ru`.
@@ -116,22 +115,5 @@ ares-launch --device myTV ru.sasflix.webosclient
 ```
 
 `myTV` замените именем своего устройства. Если на телевизоре установлена тестовая сборка с номером выше `1.0.0`, удалите её перед установкой финальной версии 1.0: webOS может отклонить пакет как понижение версии.
-
-### Через Dangbro и Homebrew Channel
-
-[Dangbro](https://github.com/azoffshowy/dangbro) устанавливает root-доступ и Homebrew Channel на совместимые телевизоры. По официальной таблице поддерживаются webOS 7.x–25 и телевизоры с DVB-тюнером в перечисленных авторами регионах. Для LG 49UK6390PLG с webOS 4 используйте Developer Mode или подберите совместимый способ через [CanI.RootMy.TV](https://cani.rootmy.tv/).
-
-На поддерживаемом телевизоре:
-
-1. Откройте [Dangbro](https://azoffshowy.github.io/dangbro/) в Chrome на компьютере в одной локальной сети с телевизором.
-2. Введите IP телевизора, подключитесь и подтвердите запрос сопряжения на телевизоре.
-3. Дождитесь установки Homebrew Channel, перезагрузите телевизор и убедитесь, что в настройках Homebrew Channel указано `Root OK`.
-4. Включите SSH в Homebrew Channel, подключитесь к телевизору и выполните:
-
-```sh
-luna-send-pub -i 'luna://org.webosbrew.hbchannel.service/install' '{"ipkUrl":"https://github.com/Mrboob58/Sasflix-webOS/releases/download/v1.0.0/ru.sasflix.webosclient_1.0.0_all.ipk","ipkHash":"0E90EEEE3757907E5274A13440AE704DD981EFA1E6ACD8AA19888CD7F91596F0","subscribe":true}'
-```
-
-Homebrew Channel скачает пакет из GitHub Release, проверит SHA-256 и установит приложение. Если Dangbro сообщает об ошибке сертификата, следуйте разделу Troubleshooting в его официальном README.
 
 Доступ к платным видео определяется подпиской пользователя на Сасфликсе.
