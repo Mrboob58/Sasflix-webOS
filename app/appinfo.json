@@ -1,0 +1,15 @@
+{
+  "id": "ru.sasflix.webosclient",
+  "version": "1.0.0",
+  "disableBackHistoryAPI": true,
+  "vendor": "Community",
+  "type": "web",
+  "main": "index.html",
+  "title": "Сасфликс",
+  "icon": "icon.png",
+  "largeIcon": "largeicon.png",
+  "splashBackground": "splash.png",
+  "requiredACG": [],
+  "resolution": "1920x1080",
+  "appDescription": "Каталог и видеоплеер Сасфликса для телевизоров LG webOS"
+}
